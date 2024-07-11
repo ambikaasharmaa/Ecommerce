@@ -1,0 +1,34 @@
+<!-- views/cart.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+</head>
+<body>
+    <h1>Shopping Cart</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% cart.forEach(item => { %>
+                <tr>
+                    <td><%= item.name %></td>
+                    <td>$<%= item.price.toFixed(2) %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <div>
+        <p>Subtotal: $<%= subtotal.toFixed(2) %></p>
+        <p>Delivery Charge: $<%= deliveryCharge.toFixed(2) %></p>
+        <p>Total: $<%= total.toFixed(2) %></p>
+    </div>
+    <a href="/">Back to Home</a>
+</body>
+</html>
